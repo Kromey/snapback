@@ -18,7 +18,7 @@ Usage
 make_snapshot.sh -s source_dir -d destination_dir
 ```
 Additional options available are:
- * -z: Turns compression on
+ * -z: Turns compression on (only really useful for over-the-network transfers)
  * -e /path/to/ssh: Provide path to SSH client executable
 
 The `-e` parameter can also be used to supply parameters to your SSH client, for example if you want to supply an SSH key that may be different from your usual default:
@@ -56,6 +56,12 @@ The monthlies are made in a virtually identical manner, via `/etc/cron.monthly`:
 ```
 /root/backup_scripts/rotate_snapshots.sh -s /root/snapshots/smb/ -y daily.0 -l monthly -r 6
 ```
+
+I also back up remote systems within this same framework; for my web server, it starts with (again in `/etc/cron.daily`):
+```
+make_snapshot.sh -z -e '/usr/bin/ssh -i /root/backup/id_rsa' -s backupuser@example.com:/var/www/ -d /root/snapshots/example.com/www/
+```
+I then follow an identical pattern of `rotate_snapshots.sh` calls as above.
 
 Warning
 -------
