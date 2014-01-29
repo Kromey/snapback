@@ -4,11 +4,13 @@
 # ----------------------------------------------------------------------
 # Based upon the excellent article by Mike Rubel
 #  http://www.mikerubel.org/computers/rsync_snapshots/
-# Modified and updated for my environment by Travis Veazey
+# Modified and updated by Travis Veazey
 # ----------------------------------------------------------------------
 # Arguments:
 #  -s	Specifies the path to the backup source
 #  -d	Specifies the path to the backup destination
+#  -z Turn compression on for copy operation
+#  -e Specifies the path to the SSH client
 
 ###### Prevent accidentally using the system path ######
 unset PATH

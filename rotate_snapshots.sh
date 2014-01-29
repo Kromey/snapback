@@ -4,7 +4,7 @@
 # ----------------------------------------------------------------------
 # Based upon the excellent article by Mike Rubel
 #  http://www.mikerubel.org/computers/rsync_snapshots/
-# Modified and updated for my environment by Travis Veazey
+# Modified and updated by Travis Veazey
 # ----------------------------------------------------------------------
 # This script rotates previous snapshots made by make_snapshot.sh.
 # ----------------------------------------------------------------------
