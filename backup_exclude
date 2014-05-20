@@ -7,3 +7,5 @@ supercache/
 .git/
 .svn/
 .dropbox.cache/
+data/cache/
+data/index/
